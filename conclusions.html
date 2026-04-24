@@ -1,0 +1,57 @@
+<h2>Findings and Recommendations</h2>
+
+<ul>
+  <li>
+    <strong>Finding:</strong> Example issue  
+    <br>
+    <strong>To Do:</strong> Suggested solution
+  </li>
+</ul>
+
+ <tr>
+    <th>Pillar</th>
+    <th>Sustainability (1–5)</th>
+    <th>Critical Rank</th>
+  </tr>
+  <tr>
+    <td>Economic</td>
+    <td>4</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Social</td>
+    <td>2</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Environmental</td>
+    <td>3</td>
+    <td>3</td>
+  </tr>
+</table>
+
+<p>
+Composite Score = (Economic × Critical Rank) +
+(Social × Critical Rank) +
+(Environmental × Critical Rank)
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<canvas id="myChart"></canvas>
+
+<script>
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Economic', 'Social', 'Environmental'],
+    datasets: [{
+      label: 'Scores',
+      data: [4, 2, 3],
+      backgroundColor: ['blue', 'green', 'orange']
+    }]
+  }
+});
+</script>
