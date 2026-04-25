@@ -20,7 +20,7 @@
   <li>
     <strong>Findings for Economic Pillar:<br></strong> </p>The findings indicate that the SOC analyst career path is highly economically sustainable due to strong and growing demand, competitive salaries, and diverse opportunities across multiple industries. With cybersecurity roles projected to grow much faster than average and thousands of open positions globally, job stability and advancement potential are significant. Salaries increase steadily with experience, and additional benefits further enhance overall compensation. However, the field is not easily accessible at the entry level, as it requires a solid technical foundation and relevant skills, meaning individuals must invest in education and experience to become competitive candidates.</p> 
     <br>
-    <strong>To Do:<br></strong> </p>-Get hands-on experience through homelabbing or platforms like TryHackMe.<p> <p>-Work on obtaining field related certifications. <p>-If still a student, apply for internships.<p>
+    <strong>To Do:<br></strong> <li>Get hands-on experience through homelabbing or platforms like TryHackMe.<li> <li>Work on obtaining field related certifications. <li>If still a student, apply for internships.<li>
   </li>
 </ul>
  <br>
@@ -28,7 +28,7 @@
   <li>
     <strong>Findings for Social Pillar:<br></strong> </p>The findings show that while the SOC analyst role contributes positively to social sustainability through protecting organizations and users, it also presents notable challenges related to well-being and work-life balance. The high-pressure environment, constant monitoring, and repetitive tasks can lead to stress, alert fatigue, and an increased risk of burnout. These factors may impact mental health and job satisfaction over time, leading some professionals to transition into other cybersecurity roles with different demands. Success in this field requires resilience, continuous learning, and strong personal motivation, indicating that long-term sustainability depends not only on job demand but also on an individual’s ability to manage the role’s intensity and maintain overall well-being.</p> 
     <br>
-    <strong>To Do:<br></strong> </p>-Improve workload management and automation.<p> <p>-Promote better work-life balance practices. <p>-Invest in training and mental health support.<p>
+    <strong>To Do:<br></strong> <li>Improve workload management and automation.<li> <li>Promote better work-life balance practices. <li>Invest in training and mental health support.<li>
   </li>
 </ul>
  <br>
@@ -36,13 +36,12 @@
   <li>
     <strong>Findings for Environmental Pillar:<br></strong> </p>The findings show that the SOC analyst career path presents environmental sustainability challenges primarily due to its reliance on always-on systems and energy-intensive infrastructure. Continuous monitoring tools and data centers consume significant electricity, with environmental impact increasing as organizations scale, particularly in large enterprises managing vast amounts of data and users. However, efforts to improve sustainability are emerging, including the adoption of energy-efficient cloud solutions, renewable energy-powered data centers, and optimized data processing practices. These advancements suggest that while the role currently has a notable environmental footprint, ongoing technological improvements are helping to reduce its long-term impact.</p> 
     <br>
-    <strong>To Do:<br></strong> </p>-Transition to energy-efficient and renewable-powered infrastructure.<p> <p>-Optimize data and collection storage. <p>-Implement smarter system management and automation.<p>
-  </li>
+    <strong>To Do:<br></strong> <li>Transition to energy-efficient and renewable-powered infrastructure.<li> <li>Optimize data and collection storage.<li> <li>Implement smarter system management and automation.<li>
 </ul>
  <br>
- <h2>Sustainability Scores</h2>
+<h2>Sustainability Scores</h2>
 
-<table>
+<table border="1" cellpadding="8">
   <tr>
     <th>Pillar</th>
     <th>Sustainability Score (1–5)</th>
@@ -52,19 +51,19 @@
   <tr>
     <td>Economic</td>
     <td>4</td>
-    <td>3</td>
+    <td>3 (High)</td>
     <td>12</td>
   </tr>
   <tr>
     <td>Social</td>
     <td>2</td>
-    <td>2</td>
+    <td>2 (Medium)</td>
     <td>4</td>
   </tr>
   <tr>
     <td>Environmental</td>
     <td>3</td>
-    <td>1</td>
+    <td>1 (Low)</td>
     <td>3</td>
   </tr>
 </table>
@@ -84,22 +83,44 @@ The Economic pillar has the strongest influence due to its high importance and s
 The Social pillar lowers the overall score, indicating an area that needs improvement.
 </p>
 
-   datasets: [{
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Economic', 'Social', 'Environmental'],
+    datasets: [{
       label: 'Weighted Scores',
       data: [12, 4, 3],
-      backgroundColor: ['#4CAF50', '#2196F3', '#FF9800']
+      backgroundColor: [
+        '#4CAF50',
+        '#2196F3',
+        '#FF9800'
+      ]
     }]
   },
   options: {
+    responsive: true,
     plugins: {
       title: {
         display: true,
         text: 'Sustainability Analysis by Pillar'
+      },
+      legend: {
+        display: false
       }
     },
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: true,
+        ticks: {
+          stepSize: 2
+        }
       }
     }
   }
