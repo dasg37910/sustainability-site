@@ -99,49 +99,66 @@ The Social pillar lowers the overall score, indicating an area that needs improv
 </p>
  </div>
 
-</body>
-</html>
 <br>
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<canvas id="myChart" width="400" height="200"></canvas>
+  <script>
+  const ctx = document.getElementById('myChart').getContext('2d');
 
-<script>
-const ctx = document.getElementById('myChart').getContext('2d');
-
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Economic', 'Social', 'Environmental'],
-    datasets: [{
-      label: 'Weighted Scores',
-      data: [12, 4, 3],
-      backgroundColor: [
-        '#4CAF50',
-        '#2196F3',
-        '#FF9800'
-      ]
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Sustainability Analysis by Pillar'
-      },
-      legend: {
-        display: false
-      }
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Economic', 'Social', 'Environmental'],
+      datasets: [{
+        label: 'Weighted Scores',
+        data: [12, 4, 3],
+        backgroundColor: [
+          '#4CAF50',
+          '#2196F3',
+          '#FF9800'
+        ],
+        borderColor: '#ffffff',
+        borderWidth: 1.5
+      }]
     },
-    scales: {
-      y: {
-        beginAtZero: true,
-        ticks: {
-          stepSize: 2
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Sustainability Analysis by Pillar',
+          color: '#ffffff'
+        },
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: '#ffffff'
+          },
+          grid: {
+            color: 'rgba(255,255,255,0.2)',
+            borderColor: '#ffffff',
+            borderWidth: 2
+          }
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 2,
+            color: '#ffffff'
+          },
+          grid: {
+            color: 'rgba(255,255,255,0.2)',
+            borderColor: '#ffffff',
+            borderWidth: 2
+          }
         }
       }
     }
-  }
-});
-</script>
+  });
+  </script>
+  </body>
+</html>
