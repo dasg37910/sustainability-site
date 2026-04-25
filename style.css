@@ -16,13 +16,11 @@ body {
   color: #e5e7eb;
 }
 
-
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 
 .content {
   max-width: 1000px;
@@ -34,25 +32,4 @@ body {
 
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-
-h1, h2 {
-  margin-top: 20px;
-}
-
-p, ul {
-  line-height: 1.6;
-}
-
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-th, td {
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
