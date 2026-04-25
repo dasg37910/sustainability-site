@@ -40,50 +40,68 @@
   </li>
 </ul>
  <br>
- <tr>
+ <h2>Sustainability Scores</h2>
+
+<table>
+  <tr>
     <th>Pillar</th>
-    <th>Sustainability (1–5)</th>
-    <th>Critical Rank</th>
+    <th>Sustainability Score (1–5)</th>
+    <th>Weight (Importance)</th>
+    <th>Weighted Score</th>
   </tr>
   <tr>
     <td>Economic</td>
     <td>4</td>
-    <td>1</td>
+    <td>3</td>
+    <td>12</td>
   </tr>
   <tr>
     <td>Social</td>
     <td>2</td>
     <td>2</td>
+    <td>4</td>
   </tr>
   <tr>
     <td>Environmental</td>
     <td>3</td>
+    <td>1</td>
     <td>3</td>
   </tr>
 </table>
 
+<h2>Composite Score</h2>
+
 <p>
-Composite Score = (Economic × Critical Rank) +
-(Social × Critical Rank) +
-(Environmental × Critical Rank)
+Composite Score = (Sustainability × Weight) for each pillar
 </p>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<p>
+Total = (4×3) + (2×2) + (3×1) = 12 + 4 + 3 = <strong>19</strong>
+</p>
 
-<canvas id="myChart"></canvas>
+<p>
+The Economic pillar has the strongest influence due to its high importance and strong performance.
+The Social pillar lowers the overall score, indicating an area that needs improvement.
+</p>
 
-<script>
-const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Economic', 'Social', 'Environmental'],
-    datasets: [{
-      label: 'Scores',
-      data: [4, 2, 3],
-      backgroundColor: ['blue', 'green', 'orange']
+   datasets: [{
+      label: 'Weighted Scores',
+      data: [12, 4, 3],
+      backgroundColor: ['#4CAF50', '#2196F3', '#FF9800']
     }]
+  },
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Sustainability Analysis by Pillar'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
   }
 });
 </script>
